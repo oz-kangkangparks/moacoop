@@ -37,7 +37,7 @@ export default function SocialPage() {
         {/* Hero Card */}
         <div className="relative rounded-3xl overflow-hidden shadow-2xl mb-24 aspect-[21/9] group">
           <Image
-            src={finishedImages[0] || '/images/placeholder.jpg'}
+            src="/images/social/social_logo.jpg"
             alt="Social Impact Hero"
             fill
             className="object-cover transition-transform duration-1000 group-hover:scale-105"
