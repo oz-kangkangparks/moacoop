@@ -81,14 +81,14 @@ export default function HomePage() {
               WITH 모아 청년 협동조합
             </span>
             <h1 className="text-5xl md:text-7xl lg:text-8xl font-bold text-white mb-8 tracking-tight leading-tight">
-              따뜻한 전문가,<br />
+              함께하는 전문가,<br />
               <span className="text-transparent bg-clip-text bg-gradient-to-r from-white to-gray-400">
-                세상을 바꾸다.
+                따뜻한 세상.
               </span>
             </h1>
             <p className="text-xl md:text-2xl text-gray-200 mb-10 max-w-2xl mx-auto leading-relaxed font-light">
-              영리 사업의 전문성과 사회 공헌의 따뜻함.<br className="hidden md:block" />
-              모아 청년 협동조합이 만드는 균형 잡힌 미래입니다.
+              IT, 건축, 의료, 예술 등 다양한 분야의 전문가들이 모였습니다.<br className="hidden md:block" />
+              모아 청년 협동조합은 재능을 나누고 수익을 환원하여 건강한 사회를 만듭니다.
             </p>
 
             <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
@@ -97,14 +97,14 @@ export default function HomePage() {
                 className="group relative px-8 py-4 bg-white text-primary rounded-full font-bold text-lg hover:shadow-[0_0_20px_rgba(255,255,255,0.3)] transition-all overflow-hidden"
               >
                 <span className="relative z-10 flex items-center">
-                  사업 소개 <Briefcase className="ml-2 w-5 h-5 group-hover:rotate-12 transition-transform" />
+                  전문 사업 분야 <Briefcase className="ml-2 w-5 h-5 group-hover:rotate-12 transition-transform" />
                 </span>
               </Link>
               <Link
-                href="/social"
+                href="/about"
                 className="group px-8 py-4 bg-transparent border border-white/30 text-white rounded-full font-bold text-lg hover:bg-white/10 backdrop-blur-sm transition-all flex items-center"
               >
-                사회 공헌 <Heart className="ml-2 w-5 h-5 group-hover:text-red-400 transition-colors" />
+                조합원 소개 <Users className="ml-2 w-5 h-5 group-hover:text-blue-300 transition-colors" />
               </Link>
             </div>
           </motion.div>
@@ -126,8 +126,8 @@ export default function HomePage() {
       <section className="relative z-20 -mt-24 px-4 max-w-7xl mx-auto w-full mb-32">
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
           <Counter from={0} to={100} label="누적 봉사 시간" />
-          <Counter from={0} to={50} label="수혜 가구 수" />
-          <Counter from={0} to={10} label="협력 기업" />
+          <Counter from={0} to={50} label="지역 사회 연계" />
+          <Counter from={0} to={10} label="함께하는 전문가" />
         </div>
       </section>
 
@@ -136,11 +136,11 @@ export default function HomePage() {
       <section className="px-4 max-w-7xl mx-auto pb-32">
         <div className="text-center mb-16">
           <h2 className="text-3xl md:text-5xl font-bold text-primary mb-6">
-            모아의 두 가지 약속
+            모아의 가치와 약속
           </h2>
           <p className="text-xl text-muted max-w-2xl mx-auto">
-            우리는 최고의 기술로 고객을 만족시키고,
-            그 수익으로 이웃을 돕는 선순환을 만듭니다.
+            각자의 전문성으로 세상에 필요한 가치를 만들고,<br />
+            그 결실을 이웃과 나누며 더 건강한 사회를 이끌어갑니다.
           </p>
         </div>
 
@@ -156,14 +156,14 @@ export default function HomePage() {
                 <div className="w-16 h-16 bg-white/10 backdrop-blur-md rounded-2xl flex items-center justify-center mb-6 text-white text-3xl border border-white/20 group-hover:bg-accent group-hover:border-accent transition-colors duration-300">
                   <Hammer />
                 </div>
-                <h3 className="text-4xl font-bold text-white mb-4">시설물 유지보수</h3>
+                <h3 className="text-4xl font-bold text-white mb-4">전문가 솔루션</h3>
                 <p className="text-slate-300 text-lg leading-relaxed">
-                  전문적인 기술과 노하우로 건물의 가치를 높입니다.<br />
-                  안전하고 쾌적한 공간을 위한 최적의 솔루션.
+                  IT, 건축, 인테리어 등 각 분야 전문가가 모여<br />
+                  고객의 니즈에 맞는 최상의 결과물을 제공합니다.
                 </p>
               </div>
               <div className="flex items-center text-white font-bold text-lg group-hover:translate-x-4 transition-transform text-accent">
-                서비스 보기 <ArrowRight className="ml-2" />
+                사업 분야 보기 <ArrowRight className="ml-2" />
               </div>
             </div>
           </Link>
@@ -181,8 +181,8 @@ export default function HomePage() {
                 </div>
                 <h3 className="text-4xl font-bold text-white mb-4">사회 공헌 활동</h3>
                 <p className="text-orange-100 text-lg leading-relaxed">
-                  수익의 절반은 반드시 사회로 환원합니다.<br />
-                  주거환경개선 봉사로 이웃에게 희망을 전합니다.
+                  사업을 통해 얻은 수익은 다시 사회로 흐릅니다.<br />
+                  환경 정화, 주거 개선 등 건강한 사회를 만듭니다.
                 </p>
               </div>
               <div className="flex items-center text-white font-bold text-lg group-hover:translate-x-4 transition-transform text-primary-light">

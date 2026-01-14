@@ -1,5 +1,7 @@
 'use client';
 
+import Image from 'next/image';
+
 import { motion } from 'framer-motion';
 import { Award, Users, MapPin, Building2 } from 'lucide-react';
 
@@ -34,13 +36,19 @@ export default function AboutPage() {
                         initial={{ opacity: 0, x: -30 }}
                         whileInView={{ opacity: 1, x: 0 }}
                         viewport={{ once: true }}
-                        className="relative aspect-square md:aspect-video lg:aspect-square bg-gray-100 rounded-[2rem] overflow-hidden shadow-2xl"
+                        className="relative aspect-square md:aspect-video lg:aspect-square bg-white rounded-[2rem] overflow-hidden shadow-2xl border border-gray-100"
                     >
-                        {/* Placeholder for About Image - could use a pattern or organization photo */}
-                        <div className="absolute inset-0 bg-gradient-to-br from-gray-200 to-gray-300 flex items-center justify-center text-gray-400">
-                            <Building2 size={64} />
+                        <div className="absolute inset-0 p-12 md:p-16 flex items-center justify-center">
+                            <div className="relative w-full h-full">
+                                <Image
+                                    src="/images/logo.png"
+                                    alt="MoaCoop Symbol"
+                                    fill
+                                    className="object-contain"
+                                    priority
+                                />
+                            </div>
                         </div>
-                        <div className="absolute inset-0 bg-black/10"></div>
                     </motion.div>
 
                     <motion.div
@@ -51,12 +59,13 @@ export default function AboutPage() {
                         <h2 className="text-3xl font-bold text-gray-900 mb-8">설립 취지</h2>
                         <div className="space-y-6 text-lg text-gray-600 leading-relaxed">
                             <p>
-                                모아 청년 협동조합은 <strong>"함께 만드는 따뜻한 세상"</strong>이라는 비전 아래 설립되었습니다.
-                                우리는 단순한 이익 창출을 넘어, 지역 사회의 문제를 함께 고민하고 해결하고자 합니다.
+                                모아 청년 협동조합은 <strong>"건강한 사회를 위한 따뜻한 동행"</strong>을 목표로 설립되었습니다.
+                                우리는 이익만을 쫓는 기업이 아닌, 각자의 재능으로 사회에 기여하는 전문가 공동체입니다.
                             </p>
                             <p>
-                                각 분야의 전문가들이 모여 최상의 서비스를 제공하고,
-                                그 수익으로 취약계층의 주거 환경을 개선하는 새로운 비즈니스 모델을 실현하고 있습니다.
+                                IT 개발자, 건축/인테리어 CEO, 의료 전문가, 화가, 시의원, 목수, 그리고 미래를 꿈꾸는 학생까지.
+                                다양한 배경을 가진 조합원들이 모여 최상의 비즈니스 결과물을 만들고,
+                                그 수익을 다시 지역 사회 봉사와 공익 활동으로 환원하고 있습니다.
                             </p>
                         </div>
 
@@ -64,7 +73,7 @@ export default function AboutPage() {
                             <div className="bg-gray-50 p-6 rounded-2xl">
                                 <Award className="w-8 h-8 text-accent mb-3" />
                                 <h4 className="font-bold text-gray-900 mb-1">전문성</h4>
-                                <p className="text-sm text-gray-500">각 분야 10년 이상 기술자</p>
+                                <p className="text-sm text-gray-500">다양한 분야의 전문가 그룹</p>
                             </div>
                             <div className="bg-gray-50 p-6 rounded-2xl">
                                 <Users className="w-8 h-8 text-primary mb-3" />

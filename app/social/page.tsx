@@ -27,8 +27,8 @@ export default function SocialPage() {
           함께 만드는 <span className="text-accent">따뜻한 세상</span>
         </h1>
         <p className="text-xl text-gray-600 max-w-2xl mx-auto leading-relaxed">
-          모아 청년 협동조합은 단순한 기부를 넘어,<br />
-          땀 흘리는 봉사로 이웃의 삶을 실질적으로 변화시킵니다.
+          전문가들의 재능 기부와 수익 환원.<br />
+          건강한 지역 사회를 위한 의미 있는 발걸음입니다.
         </p>
       </div>
 
@@ -43,12 +43,41 @@ export default function SocialPage() {
             className="object-cover transition-transform duration-1000 group-hover:scale-105"
           />
           <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent flex flex-col justify-end p-8 md:p-12">
-            <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">주거환경개선 봉사</h2>
+            <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">다양한 사회 공헌 활동</h2>
             <p className="text-gray-200 max-w-2xl text-lg backdrop-blur-sm bg-black/10 p-4 rounded-xl border border-white/10">
-              취약계층의 열악한 주거 환경을 개선합니다. 도배, 장판, 단열 시공 등 전문적인 기술 지원을 통해
-              안전하고 쾌적한 보금자리를 선물합니다.
+              주거환경개선부터 환경 정화, 어린이 안전 활동까지.<br />
+              모아 청년 협동조합은 지역 사회 곳곳에 필요한 도움의 손길을 전합니다.
             </p>
           </div>
+        </div>
+
+        {/* Diverse Activities Grid */}
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-24">
+          {[
+            {
+              title: "환경 정화 활동",
+              desc: "산과 하천의 쓰레기를 줍는 플로깅 활동으로 깨끗한 자연을 지킵니다.",
+              icon: "🌱"
+            },
+            {
+              title: "안심 통학로 조성",
+              desc: "어린이 보호구역에 페인트 도색 및 정비 활동을 통해 안전를 선물합니다.",
+              icon: "🎨"
+            },
+            {
+              title: "지역 사회 연계",
+              desc: "김해시 복지재단 등 다양한 기관과 협약을 맺고 체계적인 나눔을 실천합니다.",
+              icon: "🤝"
+            }
+          ].map((item, idx) => (
+            <div key={idx} className="bg-white p-8 rounded-2xl shadow-lg border border-gray-100 hover:shadow-xl transition-all hover:-translate-y-1">
+              <div className="text-4xl mb-4">{item.icon}</div>
+              <h3 className="text-xl font-bold text-gray-900 mb-2">{item.title}</h3>
+              <p className="text-gray-600 leading-relaxed text-sm">
+                {item.desc}
+              </p>
+            </div>
+          ))}
         </div>
 
         {/* Stats */}

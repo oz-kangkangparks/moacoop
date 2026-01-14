@@ -7,28 +7,36 @@ import { Hammer, Sparkles, PaintBucket, ArrowRight, CheckCircle2 } from 'lucide-
 export default function BusinessPage() {
     const services = [
         {
-            title: "시설물 유지보수",
+            title: "IT & 스마트 기술",
+            id: "it",
+            description: "홈페이지, AI 프로젝트, 스마트 팩토리 등 최신 IT 기술 솔루션.",
+            icon: <Sparkles className="w-8 h-8" />,
+            color: "bg-indigo-600",
+            details: ["기업형 홈페이지 및 쇼핑몰 제작", "스마트 팩토리 구축 및 컨설팅", "AI 기반 데이터 분석 프로젝트", "업무 자동화 시스템화"]
+        },
+        {
+            title: "인테리어 & 건축",
+            id: "interior",
+            description: "공간의 가치를 높이는 감각적이고 실용적인 인테리어.",
+            icon: <PaintBucket className="w-8 h-8" />,
+            color: "bg-orange-500",
+            details: ["상업 공간 및 오피스 인테리어", "노후 주택 리모델링", "맞춤형 가구 및 공간 디자인", "친환경 자재 시공"]
+        },
+        {
+            title: "시설 유지보수",
             id: "maintenance",
-            description: "노후된 건물의 가치를 되살리는 전문적인 진단과 보수 솔루션.",
+            description: "전문가의 진단으로 건물의 안전과 수명을 책임집니다.",
             icon: <Hammer className="w-8 h-8" />,
             color: "bg-blue-600",
-            details: ["전기/조명 설비 정밀 진단", "노후 배관 교체 및 누수 탐지", "옥상/외벽 특수 방수 시공", "긴급 시설물 복구 서비스"]
+            details: ["전기/조명 설비 정밀 진단", "배관 교체 및 누수 탐지", "방수 및 단열 시공", "긴급 복구 서비스"]
         },
         {
-            title: "프리미엄 클리닝",
+            title: "공간 케어 서비스",
             id: "cleaning",
-            description: "보이지 않는 먼지까지 케어하는 하이엔드 청소 서비스.",
-            icon: <Sparkles className="w-8 h-8" />,
+            description: "보이지 않는 곳까지 케어하는 프리미엄 위생 관리.",
+            icon: <CheckCircle2 className="w-8 h-8" />,
             color: "bg-teal-500",
-            details: ["오피스/상업공간 정기 케어", "특수 장비 바닥 왁스 코팅", "고층 건물 외벽/유리창 청소", "이사/입주 프리미엄 청소"]
-        },
-        {
-            title: "인테리어 솔루션",
-            id: "interior",
-            description: "공간의 효율성과 미학을 동시에 고려한 맞춤형 리모델링.",
-            icon: <PaintBucket className="w-8 h-8" />,
-            color: "bg-indigo-500",
-            details: ["상업 공간 브랜딩 인테리어", "노후 주택 리모델링", "효율적인 오피스 레이아웃 제안", "친환경 자재 시공"]
+            details: ["특수 청소 및 바닥 코팅", "준공 및 입주 청소", "정기 위생 관리", "방역 및 소독"]
         }
     ];
 
@@ -55,7 +63,7 @@ export default function BusinessPage() {
 
             <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                 {/* Services Grid */}
-                <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 mb-24">
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-24">
                     {services.map((service, index) => (
                         <motion.div
                             key={service.id}
