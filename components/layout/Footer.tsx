@@ -7,10 +7,9 @@ export default function Footer() {
             <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                 <div className="grid grid-cols-1 md:grid-cols-4 gap-12 mb-16">
 
-                    {/* Brand */}
                     <div className="col-span-1 md:col-span-2">
                         <Link href="/" className="flex items-center gap-3 mb-6">
-                            <div className="relative w-10 h-10">
+                            <div className="relative w-12 h-12">
                                 <Image
                                     src="/images/logo.png"
                                     alt="MoaCoop Logo"

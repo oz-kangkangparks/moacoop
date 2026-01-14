@@ -61,7 +61,7 @@ export default function Navbar() {
       )}>
         {/* Logo */}
         <Link href="/" className="relative z-50 flex items-center gap-3">
-          <div className="relative w-10 h-10">
+          <div className="relative w-14 h-14">
             <Image
               src="/images/logo.png"
               alt="MoaCoop Logo"
@@ -104,25 +104,38 @@ export default function Navbar() {
 
         {/* Mobile Menu Toggle */}
         <button
-          className="md:hidden z-50 p-2"
+          className="md:hidden z-50 p-2 relative"
           onClick={() => setIsOpen(!isOpen)}
+          aria-label="Toggle Menu"
         >
           {isOpen ? (
-            <X className="text-gray-900" />
+            <X className="text-white w-6 h-6" />
           ) : (
-            <Menu className="text-gray-900" />
+            <Menu className="text-gray-900 w-6 h-6" />
           )}
         </button>
+      </div>
 
-        {/* Mobile Menu Overlay */}
-        <motion.div
+      {/* Mobile Menu Overlay (Backdrop + Drawer) */}
+      <div className={cn(
+        "fixed inset-0 z-40 md:hidden transition-all duration-300",
+        isOpen ? "pointer-events-auto visible" : "pointer-events-none invisible"
+      )}>
+        {/* Backdrop */}
+        <div
           className={cn(
-            "fixed inset-0 bg-primary/95 backdrop-blur-xl z-40 md:hidden flex flex-col items-center justify-center space-y-8",
-            isOpen ? "pointer-events-auto" : "pointer-events-none"
+            "absolute inset-0 bg-black/60 backdrop-blur-sm transition-opacity duration-300",
+            isOpen ? "opacity-100" : "opacity-0"
           )}
-          initial={{ opacity: 0 }}
-          animate={{ opacity: isOpen ? 1 : 0 }}
-          transition={{ duration: 0.3 }}
+          onClick={() => setIsOpen(false)}
+        />
+
+        {/* Drawer */}
+        <div
+          className={cn(
+            "absolute top-0 right-0 h-full w-[80%] max-w-sm bg-slate-900 shadow-2xl flex flex-col justify-center items-center space-y-8 transition-transform duration-300 ease-in-out",
+            isOpen ? "translate-x-0" : "translate-x-full"
+          )}
         >
           {navLinks.map((link) => (
             <Link
@@ -134,7 +147,7 @@ export default function Navbar() {
               {link.name}
             </Link>
           ))}
-        </motion.div>
+        </div>
       </div>
     </motion.header>
   );
