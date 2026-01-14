@@ -1,18 +1,24 @@
 'use client';
 
 import Link from 'next/link';
+import Image from 'next/image';
 import { motion } from 'framer-motion';
 import { Hammer, Sparkles, PaintBucket, ArrowRight, CheckCircle2 } from 'lucide-react';
 
 export default function BusinessPage() {
     const services = [
         {
-            title: "IT & 스마트 기술",
+            title: "IT & AI & IoT 스마트 기술 전문 기업",
             id: "it",
-            description: "홈페이지, AI 프로젝트, 스마트 팩토리 등 최신 IT 기술 솔루션.",
+            description: "AI부터 ERP, MES, Saas Platform, Mobile, 자동화 솔루션, 홈페이지 까지 최적의 IT 솔루션을 제작합니다",
             icon: <Sparkles className="w-8 h-8" />,
             color: "bg-indigo-600",
-            details: ["기업형 홈페이지 및 쇼핑몰 제작", "스마트 팩토리 구축 및 컨설팅", "AI 기반 데이터 분석 프로젝트", "업무 자동화 시스템화"]
+            details: [
+                "웹 서비스 및 SaaS 플랫폼 개발 (MVP부터 상용 서비스까지)",
+                "기업용 통합 업무 시스템 구축 (ERP, MES, 재고관리)",
+                "모바일 앱 & 통합 관리 시스템",
+                "AI 지능형 챗봇 및 데이터 자동화 솔루션"
+            ]
         },
         {
             title: "인테리어 & 건축",
@@ -73,8 +79,27 @@ export default function BusinessPage() {
                             transition={{ delay: index * 0.2 }}
                             className="bg-white rounded-[2rem] p-8 shadow-lg hover:shadow-2xl transition-all duration-300 border border-gray-100 group"
                         >
-                            <div className={`${service.color} w-16 h-16 rounded-2xl flex items-center justify-center text-white mb-8 shadow-lg group-hover:scale-110 transition-transform duration-300`}>
-                                {service.icon}
+                            <div className="flex items-center mb-8">
+                                <div className={`w-16 h-16 rounded-2xl flex items-center justify-center text-white shadow-lg group-hover:scale-110 transition-transform duration-300 ${service.id === 'it' ? 'bg-white p-2 border border-gray-100' : service.color}`}>
+                                    {service.id === 'it' ? (
+                                        <div className="relative w-full h-full">
+                                            <Image
+                                                src="/images/business/kangkangparks_logo.png"
+                                                fill
+                                                className="object-contain"
+                                                alt="강강박스 로고"
+                                            />
+                                        </div>
+                                    ) : (
+                                        service.icon
+                                    )}
+                                </div>
+                                {service.id === 'it' && (
+                                    <div className="ml-5 flex flex-col justify-center">
+                                        <span className="text-2xl font-bold text-gray-900 leading-tight">강강박스</span>
+                                        <span className="text-xs font-bold text-indigo-600 tracking-widest uppercase mt-1">Kangkang Parks</span>
+                                    </div>
+                                )}
                             </div>
                             <h3 className="text-2xl font-bold text-gray-900 mb-4">{service.title}</h3>
                             <p className="text-gray-600 mb-8 leading-relaxed h-12">
@@ -90,9 +115,20 @@ export default function BusinessPage() {
                                 ))}
                             </ul>
 
-                            <Link href="/contact" className="flex items-center justify-center w-full py-4 rounded-xl bg-gray-900 text-white font-bold hover:bg-primary transition-colors group-hover:shadow-lg">
-                                견적 상담 받기
-                            </Link>
+                            {service.id === 'it' ? (
+                                <Link
+                                    href="https://kangkangparks.com"
+                                    target="_blank"
+                                    rel="noopener noreferrer"
+                                    className="flex items-center justify-center w-full py-4 rounded-xl bg-indigo-600 text-white font-bold hover:bg-indigo-700 transition-colors group-hover:shadow-lg"
+                                >
+                                    강강박스 홈페이지 보기
+                                </Link>
+                            ) : (
+                                <Link href="/contact" className="flex items-center justify-center w-full py-4 rounded-xl bg-gray-900 text-white font-bold hover:bg-primary transition-colors group-hover:shadow-lg">
+                                    견적 상담 받기
+                                </Link>
+                            )}
                         </motion.div>
                     ))}
                 </div>
