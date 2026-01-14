@@ -1,0 +1,65 @@
+@import url("https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.min.css");
+@import "tailwindcss";
+
+:root {
+  /* Premium Palette */
+  --primary-dark: #0F172A;
+  /* Deep Navy */
+  --primary-light: #1E293B;
+  /* Lighter Navy */
+  --accent-orange: #F97316;
+  /* Sunset Orange */
+  --accent-gold: #D97706;
+  /* Muted Gold for highlights */
+
+  --bg-color: #FAFAF9;
+  /* Warm Off-white */
+  --text-main: #1C1917;
+  /* Warm Black */
+  --text-muted: #57534E;
+  /* Warm Gray */
+
+  --glass-border: rgba(255, 255, 255, 0.2);
+  --glass-bg: rgba(255, 255, 255, 0.7);
+}
+
+@theme {
+  --font-pretendard: "Pretendard Variable", Pretendard, -apple-system, BlinkMacSystemFont, system-ui, Roboto, "Helvetica Neue", "Segoe UI", "Apple SD Gothic Neo", "Noto Sans KR", "Malgun Gothic", "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", sans-serif;
+
+  --color-primary: var(--primary-dark);
+  --color-primary-light: var(--primary-light);
+  --color-accent: var(--accent-orange);
+  --color-accent-gold: var(--accent-gold);
+
+  --color-background: var(--bg-color);
+  --color-foreground: var(--text-main);
+  --color-muted: var(--text-muted);
+}
+
+body {
+  font-family: var(--font-pretendard);
+  background: var(--bg-color);
+  color: var(--text-main);
+  antialiased: true;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* Custom Utilities */
+.glass {
+  background: var(--glass-bg);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid var(--glass-border);
+}
+
+.text-gradient {
+  background: linear-gradient(135deg, #0F172A 0%, #334155 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.text-gradient-accent {
+  background: linear-gradient(135deg, #F97316 0%, #EA580C 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
