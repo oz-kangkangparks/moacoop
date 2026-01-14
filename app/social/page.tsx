@@ -35,16 +35,17 @@ export default function SocialPage() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
 
         {/* Hero Card */}
-        <div className="relative rounded-3xl overflow-hidden shadow-2xl mb-24 aspect-[21/9] group">
+        {/* Hero Card */}
+        <div className="relative rounded-3xl overflow-hidden shadow-2xl mb-12 md:mb-24 aspect-[4/3] md:aspect-[21/9] group">
           <Image
             src="/images/social/social_logo.jpg"
             alt="Social Impact Hero"
             fill
             className="object-cover transition-transform duration-1000 group-hover:scale-105"
           />
-          <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent flex flex-col justify-end p-8 md:p-12">
+          <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/20 to-transparent flex flex-col justify-end p-6 md:p-12">
             <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">다양한 사회 공헌 활동</h2>
-            <p className="text-gray-200 max-w-2xl text-lg backdrop-blur-sm bg-black/10 p-4 rounded-xl border border-white/10">
+            <p className="text-gray-100 max-w-2xl text-lg md:text-xl leading-relaxed">
               주거환경개선부터 환경 정화, 어린이 안전 활동까지.<br />
               모아 청년 협동조합은 지역 사회 곳곳에 필요한 도움의 손길을 전합니다.
             </p>
