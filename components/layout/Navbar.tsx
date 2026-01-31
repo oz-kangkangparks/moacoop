@@ -4,7 +4,7 @@ import { useState, useEffect } from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
 import { usePathname } from 'next/navigation';
-import { motion, useScroll, useTransform } from 'framer-motion';
+import { motion } from 'framer-motion';
 import { Menu, X } from 'lucide-react';
 import { clsx } from 'clsx';
 import { twMerge } from 'tailwind-merge';
@@ -19,6 +19,9 @@ export default function Navbar() {
   const pathname = usePathname();
   const isHome = pathname === '/';
 
+  // Navbar triggers solid style if scrolled OR if not on the home page (to ensure visibility on white backgrounds)
+  const isSolid = isScrolled || !isHome;
+
   // Update scrolled state based on scroll position
   useEffect(() => {
     const handleScroll = () => {
@@ -28,8 +31,7 @@ export default function Navbar() {
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
-  // Force scrolled style on non-home pages
-  const showSolidNav = !isHome || isScrolled;
+
 
   const navLinks = [
     { name: 'HOME', href: '/' },
@@ -41,8 +43,7 @@ export default function Navbar() {
 
   // Always use solid/glass style for visibility
   const headerClass = "py-4";
-  const containerClass = "bg-white/90 backdrop-blur-md border border-white/20 shadow-lg py-3";
-  const textClass = "text-gray-800";
+
   const hoverClass = "text-gray-600 hover:text-primary hover:bg-gray-100/50";
 
   return (
@@ -56,22 +57,22 @@ export default function Navbar() {
       transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
     >
       <div className={cn(
-        "max-w-7xl mx-auto px-6 mx-4 rounded-2xl transition-all duration-300 flex items-center justify-between",
-        containerClass
+        "max-w-7xl mx-auto px-6 rounded-2xl transition-all duration-300 flex items-center justify-between",
+        isSolid ? "bg-white/90 backdrop-blur-md border border-white/20 shadow-lg py-3" : "bg-transparent py-4"
       )}>
         {/* Logo */}
-        <Link href="/" className="relative z-50 flex items-center gap-3">
-          <div className="relative w-14 h-14">
+        <Link href="/" className="relative z-50 flex items-center gap-4">
+          <div className="relative w-12 h-12 md:w-16 md:h-16 rounded-full overflow-hidden bg-white border border-white/20 shadow-md flex items-center justify-center">
             <Image
               src="/images/logo.png"
               alt="MoaCoop Logo"
               fill
-              className="object-contain"
+              className="object-contain scale-[1.7]"
             />
           </div>
           <span className={cn(
-            "text-2xl font-bold tracking-tight transition-colors duration-300",
-            "text-primary"
+            "text-xl md:text-2xl font-bold tracking-tight transition-colors duration-300",
+            isSolid ? "text-primary" : "text-white"
           )}>
             모아 청년 협동조합
           </span>
@@ -85,7 +86,7 @@ export default function Navbar() {
               href={link.href}
               className={cn(
                 "px-4 py-2 rounded-full text-sm font-medium transition-all duration-300",
-                hoverClass
+                isSolid ? "text-gray-600 hover:text-primary hover:bg-gray-100/50" : "text-white/90 hover:text-white hover:bg-white/10"
               )}
             >
               {link.name}
@@ -111,7 +112,7 @@ export default function Navbar() {
           {isOpen ? (
             <X className="text-white w-6 h-6" />
           ) : (
-            <Menu className="text-gray-900 w-6 h-6" />
+            <Menu className={cn("w-6 h-6 transition-colors duration-300", isSolid ? "text-gray-900" : "text-white")} />
           )}
         </button>
       </div>

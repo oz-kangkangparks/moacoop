@@ -47,7 +47,7 @@ export default function BusinessPage() {
     ];
 
     return (
-        <div className="pt-24 pb-32 min-h-screen bg-neutral-50">
+        <div className="pt-40 pb-32 min-h-screen bg-neutral-50">
             {/* Hero Header */}
             <div className="text-center mb-24 px-4">
                 <motion.span

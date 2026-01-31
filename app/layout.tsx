@@ -32,7 +32,7 @@ export default function RootLayout({
     <html lang="ko">
       <body className={inter.className}>
         <Navbar />
-        <main className="min-h-screen pt-16">
+        <main className="min-h-screen">
           {children}
         </main>
         <Footer />

@@ -1,25 +1,10 @@
+import Link from 'next/link';
 import Image from 'next/image';
-import fs from 'fs';
-import path from 'path';
-import GalleryGrid from '@/components/ui/GalleryGrid';
-
-function getImages(dirName: string) {
-  const dirPath = path.join(process.cwd(), 'public', 'images', dirName);
-  try {
-    const files = fs.readdirSync(dirPath);
-    return files.filter(file => /\.(jpg|jpeg|png|webp)$/i.test(file)).map(file => `/images/${dirName}/${file}`);
-  } catch (error) {
-    console.error(`Error reading directory ${dirName}:`, error);
-    return [];
-  }
-}
+import { activities } from './data';
 
 export default function SocialPage() {
-  const finishedImages = getImages('finished');
-  const workingImages = getImages('working');
-
   return (
-    <div className="pt-24 pb-32 bg-gray-50 min-h-screen">
+    <div className="pt-40 pb-32 bg-gray-50 min-h-screen">
       {/* Header */}
       <div className="text-center mb-20 px-4">
         <span className="text-accent font-bold tracking-widest text-sm uppercase mb-3 block">Social Impact</span>
@@ -33,74 +18,46 @@ export default function SocialPage() {
       </div>
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-
-        {/* Hero Card */}
-        {/* Hero Card */}
-        <div className="relative rounded-3xl overflow-hidden shadow-2xl mb-12 md:mb-24 aspect-[4/3] md:aspect-[21/9] group">
-          <Image
-            src="/images/social/social_logo.jpg"
-            alt="Social Impact Hero"
-            fill
-            className="object-cover transition-transform duration-1000 group-hover:scale-105"
-          />
-          <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/20 to-transparent flex flex-col justify-end p-6 md:p-12">
-            <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">다양한 사회 공헌 활동</h2>
-            <p className="text-gray-100 max-w-2xl text-lg md:text-xl leading-relaxed">
-              주거환경개선부터 환경 정화, 어린이 안전 활동까지.<br />
-              모아 청년 협동조합은 지역 사회 곳곳에 필요한 도움의 손길을 전합니다.
-            </p>
-          </div>
-        </div>
-
-        {/* Diverse Activities Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-24">
-          {[
-            {
-              title: "환경 정화 활동",
-              desc: "산과 하천의 쓰레기를 줍는 플로깅 활동으로 깨끗한 자연을 지킵니다.",
-              icon: "🌱"
-            },
-            {
-              title: "안심 통학로 조성",
-              desc: "어린이 보호구역에 페인트 도색 및 정비 활동을 통해 안전를 선물합니다.",
-              icon: "🎨"
-            },
-            {
-              title: "지역 사회 연계",
-              desc: "김해시 복지재단 등 다양한 기관과 협약을 맺고 체계적인 나눔을 실천합니다.",
-              icon: "🤝"
-            }
-          ].map((item, idx) => (
-            <div key={idx} className="bg-white p-8 rounded-2xl shadow-lg border border-gray-100 hover:shadow-xl transition-all hover:-translate-y-1">
-              <div className="text-4xl mb-4">{item.icon}</div>
-              <h3 className="text-xl font-bold text-gray-900 mb-2">{item.title}</h3>
-              <p className="text-gray-600 leading-relaxed text-sm">
-                {item.desc}
-              </p>
-            </div>
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 lg:gap-12">
+          {activities.map((activity) => (
+            <Link
+              key={activity.id}
+              href={`/social/${activity.id}`}
+              className="group bg-white rounded-3xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-1 block"
+            >
+              <div className="relative aspect-[4/3] overflow-hidden">
+                <Image
+                  src={activity.thumbnail}
+                  alt={activity.title}
+                  fill
+                  className="object-cover transition-transform duration-700 group-hover:scale-110"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent opacity-80 group-hover:opacity-100 transition-opacity" />
+                <div className="absolute bottom-0 left-0 p-8">
+                  <span className="text-4xl mb-4 block transform group-hover:scale-110 transition-transform duration-300 origin-left">
+                    {activity.icon}
+                  </span>
+                  <h2 className="text-2xl md:text-3xl font-bold text-white mb-2 group-hover:text-accent transition-colors">
+                    {activity.title}
+                  </h2>
+                </div>
+              </div>
+              <div className="p-8">
+                <p className="text-gray-600 leading-relaxed text-lg line-clamp-3">
+                  {activity.description}
+                </p>
+                <div className="mt-6 flex items-center text-primary font-bold group-hover:translate-x-2 transition-transform">
+                  자세히 보기
+                  <svg className="w-5 h-5 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m-4-4H3" />
+                  </svg>
+                </div>
+              </div>
+            </Link>
           ))}
         </div>
-
-        {/* Stats */}
-        <div className="grid grid-cols-2 md:grid-cols-4 gap-4 mb-24">
-          {[
-            { label: '누적 봉사', value: '100+', sub: '시간' },
-            { label: '수혜 가구', value: '50+', sub: '가구' },
-            { label: '참여 조합원', value: '20+', sub: '명' },
-            { label: '지역 사회', value: '5+', sub: '곳' },
-          ].map((stat, idx) => (
-            <div key={idx} className="bg-white p-6 rounded-2xl shadow-sm border border-gray-100 text-center hover:shadow-md transition-all">
-              <div className="text-3xl font-bold text-primary mb-1">{stat.value}</div>
-              <div className="text-sm text-gray-500">{stat.label} {stat.sub}</div>
-            </div>
-          ))}
-        </div>
-
-        {/* Galleries */}
-        <GalleryGrid images={finishedImages} title="활동 완료 모습" colorStart="bg-blue-600" />
-        <GalleryGrid images={workingImages} title="현장의 땀방울" colorStart="bg-orange-500" />
-
       </div>
     </div>
   );
 }
+

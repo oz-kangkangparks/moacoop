@@ -7,7 +7,7 @@ import { Award, Users, MapPin, Building2 } from 'lucide-react';
 
 export default function AboutPage() {
     return (
-        <div className="pt-24 pb-32 min-h-screen bg-white">
+        <div className="pt-40 pb-32 min-h-screen bg-white">
             {/* Header */}
             <div className="text-center mb-20 px-4">
                 <motion.p

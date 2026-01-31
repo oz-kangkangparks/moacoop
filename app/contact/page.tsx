@@ -5,7 +5,7 @@ import { Phone, Mail, MapPin, ArrowRight } from 'lucide-react';
 
 export default function ContactPage() {
     return (
-        <div className="pt-24 pb-32 min-h-screen bg-gray-50">
+        <div className="pt-40 pb-32 min-h-screen bg-gray-50">
             {/* Header */}
             <div className="text-center mb-24 px-4">
                 <motion.p

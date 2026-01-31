@@ -80,13 +80,10 @@ export default function HomePage() {
             <span className="inline-block py-1 px-3 rounded-full bg-accent/20 text-accent border border-accent/30 text-sm font-bold tracking-wider mb-6 backdrop-blur-md">
               WITH 모아 청년 협동조합
             </span>
-            <h1 className="text-5xl md:text-7xl lg:text-8xl font-bold text-white mb-8 tracking-tight leading-tight">
-              함께하는 전문가,<br />
-              <span className="text-transparent bg-clip-text bg-gradient-to-r from-white to-gray-400">
-                따뜻한 세상.
-              </span>
+            <h1 className="text-5xl md:text-6xl lg:text-7xl font-bold text-white mb-8 tracking-tight leading-tight whitespace-nowrap">
+              함께하는 전문가, <span className="text-transparent bg-clip-text bg-gradient-to-r from-white to-gray-400">따뜻한 세상.</span>
             </h1>
-            <p className="text-xl md:text-2xl text-gray-200 mb-10 max-w-2xl mx-auto leading-relaxed font-light">
+            <p className="text-xl md:text-2xl text-gray-200 mb-10 max-w-4xl mx-auto leading-relaxed font-light break-keep">
               IT, 건축, 의료, 예술 등 다양한 분야의 전문가들이 모였습니다.<br className="hidden md:block" />
               모아 청년 협동조합은 재능을 나누고 수익을 환원하여 건강한 사회를 만듭니다.
             </p>
@@ -138,17 +135,17 @@ export default function HomePage() {
           <h2 className="text-3xl md:text-5xl font-bold text-primary mb-6">
             모아의 가치와 약속
           </h2>
-          <p className="text-xl text-muted max-w-2xl mx-auto">
-            각자의 전문성으로 세상에 필요한 가치를 만들고,<br />
-            그 결실을 이웃과 나누며 더 건강한 사회를 이끌어갑니다.
+          <p className="text-xl text-muted max-w-6xl mx-auto break-keep px-4">
+            각자의 전문성으로 세상에 필요한 가치를 만들고, 그 결실을 이웃과 나누며 더 건강한 사회를 이끌어갑니다.
           </p>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 h-auto md:h-[600px]">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 h-auto md:h-[480px]">
           {/* Card 1: Business */}
           <Link href="/business" className="group relative rounded-3xl overflow-hidden shadow-2xl cursor-pointer">
             <div className="absolute inset-0 bg-slate-900 transition-transform duration-700 group-hover:scale-105">
-              {/* Ideally another image here */}
+              {/* Decorative Background Icon */}
+              <Hammer className="absolute -bottom-10 -right-10 w-64 h-64 text-white/5 rotate-12" />
               <div className="absolute inset-0 bg-gradient-to-br from-slate-900 via-slate-800 to-slate-900 opacity-90" />
             </div>
             <div className="relative h-full p-12 flex flex-col justify-between z-10">
@@ -157,9 +154,8 @@ export default function HomePage() {
                   <Hammer />
                 </div>
                 <h3 className="text-4xl font-bold text-white mb-4">전문가 솔루션</h3>
-                <p className="text-slate-300 text-lg leading-relaxed">
-                  IT, 건축, 인테리어 등 각 분야 전문가가 모여<br />
-                  고객의 니즈에 맞는 최상의 결과물을 제공합니다.
+                <p className="text-slate-300 text-lg leading-relaxed break-keep">
+                  IT, 건축, 인테리어 등 각 분야 전문가가 모여 고객의 니즈에 맞는 최상의 결과물을 제공합니다.
                 </p>
               </div>
               <div className="flex items-center text-white font-bold text-lg group-hover:translate-x-4 transition-transform text-accent">
@@ -171,7 +167,8 @@ export default function HomePage() {
           {/* Card 2: Social */}
           <Link href="/social" className="group relative rounded-3xl overflow-hidden shadow-2xl cursor-pointer">
             <div className="absolute inset-0 bg-orange-900 transition-transform duration-700 group-hover:scale-105">
-              {/* Ideally another image here */}
+              {/* Decorative Background Icon */}
+              <Heart className="absolute -bottom-10 -right-10 w-64 h-64 text-white/5 rotate-12" />
               <div className="absolute inset-0 bg-gradient-to-br from-orange-900 via-orange-800 to-orange-950 opacity-90" />
             </div>
             <div className="relative h-full p-12 flex flex-col justify-between z-10">
@@ -180,7 +177,7 @@ export default function HomePage() {
                   <Heart />
                 </div>
                 <h3 className="text-4xl font-bold text-white mb-4">사회 공헌 활동</h3>
-                <p className="text-orange-100 text-lg leading-relaxed">
+                <p className="text-orange-100 text-lg leading-relaxed break-keep">
                   사업을 통해 얻은 수익은 다시 사회로 흐릅니다.<br />
                   환경 정화, 주거 개선 등 건강한 사회를 만듭니다.
                 </p>
