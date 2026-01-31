@@ -21,12 +21,17 @@ export default function BusinessPage() {
             ]
         },
         {
-            title: "인테리어 & 건축",
-            id: "interior",
-            description: "공간의 가치를 높이는 감각적이고 실용적인 인테리어.",
-            icon: <PaintBucket className="w-8 h-8" />,
-            color: "bg-orange-500",
-            details: ["상업 공간 및 오피스 인테리어", "노후 주택 리모델링", "맞춤형 가구 및 공간 디자인", "친환경 자재 시공"]
+            title: "모아름 (MOAREUM)",
+            id: "moareum",
+            description: "반복적인 업무는 로봇에게, 창의적인 업무는 사람에게. 업무 자동화의 새로운 기준을 제시합니다.",
+            icon: <PaintBucket className="w-8 h-8" />, // Fallback, not used due to logo logic
+            color: "bg-orange-500", // Not used for container if we use white logo bg
+            details: [
+                "No-Code/Low-Code 자동화 (n8n, Make, Zapier)",
+                "AI 에이전트 및 맞춤형 봇(Custom Bot) 개발",
+                "업무 프로세스 최적화 및 자동화 컨설팅",
+                "Opal 등 최신 자동화 툴 통합 구축"
+            ]
         },
         {
             title: "시설 유지보수",
@@ -63,7 +68,7 @@ export default function BusinessPage() {
                     transition={{ delay: 0.1 }}
                     className="text-4xl md:text-6xl font-bold text-gray-900 mb-6 font-pretendard"
                 >
-                    전문가의 손길로<br /><span className="text-primary">완성하는 공간</span>
+                    전문가의 손길로<br /><span className="text-primary">완성하는 비즈니스</span>
                 </motion.h1>
             </div>
 
@@ -80,7 +85,7 @@ export default function BusinessPage() {
                             className="bg-white rounded-[2rem] p-8 shadow-lg hover:shadow-2xl transition-all duration-300 border border-gray-100 group"
                         >
                             <div className="flex items-center mb-8">
-                                <div className={`w-16 h-16 rounded-2xl flex items-center justify-center text-white shadow-lg group-hover:scale-110 transition-transform duration-300 ${service.id === 'it' ? 'bg-white p-2 border border-gray-100' : service.color}`}>
+                                <div className={`w-16 h-16 rounded-2xl flex items-center justify-center text-white shadow-lg group-hover:scale-110 transition-transform duration-300 ${(service.id === 'it' || service.id === 'moareum') ? 'bg-white p-2 border border-gray-100' : service.color}`}>
                                     {service.id === 'it' ? (
                                         <div className="relative w-full h-full">
                                             <Image
@@ -88,6 +93,15 @@ export default function BusinessPage() {
                                                 fill
                                                 className="object-contain"
                                                 alt="강강박스 로고"
+                                            />
+                                        </div>
+                                    ) : service.id === 'moareum' ? (
+                                        <div className="relative w-full h-full">
+                                            <Image
+                                                src="/images/business/moareum_symbol.png"
+                                                fill
+                                                className="object-contain"
+                                                alt="모아름 로고"
                                             />
                                         </div>
                                     ) : (
@@ -98,6 +112,12 @@ export default function BusinessPage() {
                                     <div className="ml-5 flex flex-col justify-center">
                                         <span className="text-2xl font-bold text-gray-900 leading-tight">강강박스</span>
                                         <span className="text-xs font-bold text-indigo-600 tracking-widest uppercase mt-1">Kangkang Parks</span>
+                                    </div>
+                                )}
+                                {service.id === 'moareum' && (
+                                    <div className="ml-5 flex flex-col justify-center">
+                                        <span className="text-2xl font-bold text-gray-900 leading-tight">모아름</span>
+                                        <span className="text-xs font-bold text-orange-500 tracking-widest uppercase mt-1">MOAREUM</span>
                                     </div>
                                 )}
                             </div>
@@ -124,6 +144,13 @@ export default function BusinessPage() {
                                 >
                                     강강박스 홈페이지 보기
                                 </Link>
+                            ) : service.id === 'moareum' ? (
+                                <button
+                                    disabled
+                                    className="flex items-center justify-center w-full py-4 rounded-xl bg-gray-300 text-gray-500 font-bold cursor-not-allowed"
+                                >
+                                    모아름 홈페이지 보기 (26년 2월 오픈예정)
+                                </button>
                             ) : (
                                 <Link href="/contact" className="flex items-center justify-center w-full py-4 rounded-xl bg-gray-900 text-white font-bold hover:bg-primary transition-colors group-hover:shadow-lg">
                                     견적 상담 받기
