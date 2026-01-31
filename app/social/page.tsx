@@ -12,8 +12,9 @@ export default function SocialPage() {
           함께 만드는 <span className="text-accent">따뜻한 세상</span>
         </h1>
         <p className="text-xl text-gray-600 max-w-2xl mx-auto leading-relaxed">
-          전문가들의 재능 기부와 수익 환원.<br />
-          건강한 지역 사회를 위한 의미 있는 발걸음입니다.
+          주거 환경 개선에서 멈추지 않습니다.<br />
+          어린이 옐로카펫 보수, 실종 예방 스마트 태그 보급, 정책 연구까지.<br />
+          우리는 사회 곳곳에 필요한 도움을 고민하고 행동합니다.
         </p>
       </div>
 

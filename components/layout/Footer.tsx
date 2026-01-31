@@ -5,7 +5,7 @@ export default function Footer() {
     return (
         <footer className="bg-gray-950 text-white pt-20 pb-10 border-t border-white/10">
             <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-                <div className="grid grid-cols-1 md:grid-cols-4 gap-12 mb-16">
+                <div className="grid grid-cols-1 md:grid-cols-5 gap-12 mb-16">
 
                     <div className="col-span-1 md:col-span-2">
                         <Link href="/" className="flex items-center gap-3 mb-6">
@@ -34,7 +34,7 @@ export default function Footer() {
                     </div>
 
                     {/* Quick Links */}
-                    <div>
+                    <div className="col-span-1">
                         <h3 className="font-bold text-gray-100 mb-6">바로가기</h3>
                         <ul className="space-y-3 text-sm text-gray-400">
                             <li><Link href="/about" className="hover:text-primary transition-colors">소개</Link></li>
@@ -45,20 +45,20 @@ export default function Footer() {
                     </div>
 
                     {/* Contact Info */}
-                    <div>
+                    <div className="col-span-1 md:col-span-2">
                         <h3 className="font-bold text-gray-100 mb-6">Contact</h3>
                         <ul className="space-y-3 text-sm text-gray-400">
                             <li>
-                                <span className="block text-xs uppercase tracking-wider text-gray-600 mb-1">Address</span>
-                                서울특별시 ...
+                                <span className="block text-xs uppercase tracking-wider text-gray-600 mb-1">주소</span>
+                                경상남도 김해시 김해대로 2301번길 11, 2층
                             </li>
                             <li>
-                                <span className="block text-xs uppercase tracking-wider text-gray-600 mb-1">Phone</span>
-                                02-1234-5678
+                                <span className="block text-xs uppercase tracking-wider text-gray-600 mb-1">법인등록번호</span>
+                                195551-0000980
                             </li>
                             <li>
                                 <span className="block text-xs uppercase tracking-wider text-gray-600 mb-1">Email</span>
-                                contact@moacoop.co.kr
+                                moa@moacoop.co.kr
                             </li>
                         </ul>
                     </div>

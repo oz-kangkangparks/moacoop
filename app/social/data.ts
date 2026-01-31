@@ -72,16 +72,9 @@ export const activities: Activity[] = [
     thumbnail: '/images/social/social_logo.webp',
     icon: '🏠',
     imagesDir: ['finished', 'working'],
-    content: `전문가들의 재능 기부와 수익 환원.
-    건강한 지역 사회를 위한 의미 있는 발걸음입니다.
-    주거환경개선부터 환경 정화, 어린이 안전 활동까지.
-    모아 청년 협동조합은 지역 사회 곳곳에 필요한 도움의 손길을 전합니다.`,
-    stats: [
-      { label: '누적 봉사', value: '100+', sub: '시간' },
-      { label: '수혜 가구', value: '50+', sub: '가구' },
-      { label: '참여 조합원', value: '20+', sub: '명' },
-      { label: '지역 사회', value: '5+', sub: '곳' },
-    ]
+    content: `도배가 필요한 어르신 댁, 비가 새는 지붕. 혼자서는 엄두가 나지 않던 일들을 전문가들이 함께 해결해 드립니다.
+    땀 흘려 고친 집에서 편안히 쉬실 이웃의 모습을 생각하며 작업합니다.
+    우리는 대단한 일을 하는 것이 아니라, 우리 이웃에게 당장 필요한 일을 합니다.`
   },
   {
     id: 'yellow-carpet-restoration',

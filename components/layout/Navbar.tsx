@@ -38,6 +38,7 @@ export default function Navbar() {
     { name: '소개', href: '/about' },
     { name: '사회 공헌', href: '/social' },
     { name: '사업', href: '/business' },
+    { name: '후원 내역', href: '/donation' },
     { name: '소식/문의', href: '/contact' },
   ];
 

@@ -80,8 +80,8 @@ export default function HomePage() {
             <span className="inline-block py-1 px-3 rounded-full bg-accent/20 text-accent border border-accent/30 text-sm font-bold tracking-wider mb-6 backdrop-blur-md">
               WITH 모아 청년 협동조합
             </span>
-            <h1 className="text-5xl md:text-6xl lg:text-7xl font-bold text-white mb-8 tracking-tight leading-tight whitespace-nowrap">
-              함께하는 전문가, <span className="text-transparent bg-clip-text bg-gradient-to-r from-white to-gray-400">따뜻한 세상.</span>
+            <h1 className="text-5xl md:text-6xl lg:text-7xl font-bold text-white mb-8 tracking-tight leading-tight break-keep">
+              전문가의 재능으로,<br /> <span className="text-transparent bg-clip-text bg-gradient-to-r from-white to-gray-400">이웃의 내일을 만듭니다.</span>
             </h1>
             <p className="text-xl md:text-2xl text-gray-200 mb-10 max-w-4xl mx-auto leading-relaxed font-light break-keep">
               IT, 건축, 의료, 예술 등 다양한 분야의 전문가들이 모였습니다.<br className="hidden md:block" />
@@ -119,14 +119,7 @@ export default function HomePage() {
       </section>
 
 
-      {/* 2. Impact Stats (Floating) */}
-      <section className="relative z-20 -mt-24 px-4 max-w-7xl mx-auto w-full mb-32">
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-          <Counter from={0} to={100} label="누적 봉사 시간" />
-          <Counter from={0} to={50} label="지역 사회 연계" />
-          <Counter from={0} to={10} label="함께하는 전문가" />
-        </div>
-      </section>
+
 
 
       {/* 3. Bento Grid Navigation */}
@@ -136,7 +129,7 @@ export default function HomePage() {
             모아의 가치와 약속
           </h2>
           <p className="text-xl text-muted max-w-6xl mx-auto break-keep px-4">
-            각자의 전문성으로 세상에 필요한 가치를 만들고, 그 결실을 이웃과 나누며 더 건강한 사회를 이끌어갑니다.
+            집수리부터 스마트 태그 보급, 정책 연구까지. 우리가 가진 기술로 사회의 빈틈을 채우고 더 안전한 일상을 만듭니다.
           </p>
         </div>
 
@@ -178,8 +171,8 @@ export default function HomePage() {
                 </div>
                 <h3 className="text-4xl font-bold text-white mb-4">사회 공헌 활동</h3>
                 <p className="text-orange-100 text-lg leading-relaxed break-keep">
-                  사업을 통해 얻은 수익은 다시 사회로 흐릅니다.<br />
-                  환경 정화, 주거 개선 등 건강한 사회를 만듭니다.
+                  수익금은 다시 우리 이웃에게 돌아갑니다. <br />
+                  옐로카펫 보수, 치매 노인/아동 실종 예방을 위한 스마트 태그 보급 등 꼭 필요한 곳에 쓰입니다.
                 </p>
               </div>
               <div className="flex items-center text-white font-bold text-lg group-hover:translate-x-4 transition-transform text-primary-light">

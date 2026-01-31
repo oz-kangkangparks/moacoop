@@ -59,13 +59,14 @@ export default function AboutPage() {
                         <h2 className="text-3xl font-bold text-gray-900 mb-8">설립 취지</h2>
                         <div className="space-y-6 text-lg text-gray-600 leading-relaxed">
                             <p>
-                                모아 청년 협동조합은 <strong>"건강한 사회를 위한 따뜻한 동행"</strong>을 목표로 설립되었습니다.
-                                우리는 이익만을 쫓는 기업이 아닌, 각자의 재능으로 사회에 기여하는 전문가 공동체입니다.
+                                처음엔 <strong>'우리가 가진 기술로 좋은 일을 할 수 없을까?'</strong> 라는 작은 고민에서 시작했습니다.
+                                혼자 하면 봉사지만, 전문가들이 모이면 변화가 된다는 것을 믿습니다.
                             </p>
                             <p>
-                                IT 개발자, 건축/인테리어 CEO, 의료 전문가, 화가, 시의원, 목수, 그리고 미래를 꿈꾸는 학생까지.
-                                다양한 배경을 가진 조합원들이 모여 최상의 비즈니스 결과물을 만들고,
-                                그 수익을 다시 지역 사회 봉사와 공익 활동으로 환원하고 있습니다.
+                                IT 개발자, 건축가, 의료진, 예술가...
+                                각기 다른 분야의 전문가들이 모여 수익을 창출하고,
+                                그 수익으로 지역 사회에 꼭 필요한 도움을 전하는 것.
+                                그것이 모아 청년 협동조합이 존재하는 이유입니다.
                             </p>
                         </div>
 
@@ -145,14 +146,44 @@ export default function AboutPage() {
                         <div className="relative z-10">
                             <MapPin className="w-12 h-12 mx-auto mb-6 text-accent" />
                             <h2 className="text-3xl font-bold mb-4">오시는 길</h2>
-                            <p className="text-gray-400 mb-8">언제든 편하게 방문해주세요. 따뜻한 차 한 잔 대접하겠습니다.</p>
-                            <address className="not-italic text-xl">
-                                서울특별시 ... (상세 주소)
+                            <p className="text-white font-medium text-lg mb-8 drop-shadow-md">언제든 편하게 방문해주세요. 따뜻한 차 한 잔 대접하겠습니다.</p>
+                            <address className="not-italic text-xl mb-8">
+                                경상남도 김해시 김해대로 2301번길 11, 2층
                             </address>
+                            <div className="flex flex-wrap gap-4 justify-center">
+                                <a
+                                    href="https://map.naver.com/v5/search/경상남도%20김해시%20김해대로%202301번길%2011%202층"
+                                    target="_blank"
+                                    rel="noopener noreferrer"
+                                    className="px-6 py-3 bg-[#03C75A] text-white rounded-xl font-bold hover:bg-[#02b351] transition-colors shadow-lg flex items-center"
+                                >
+                                    네이버 지도로 보기
+                                </a>
+                                <a
+                                    href="https://map.kakao.com/link/search/경상남도%20김해시%20김해대로%202301번길%2011"
+                                    target="_blank"
+                                    rel="noopener noreferrer"
+                                    className="px-6 py-3 bg-[#FEE500] text-black rounded-xl font-bold hover:bg-[#ebd400] transition-colors shadow-lg flex items-center"
+                                >
+                                    카카오맵으로 보기
+                                </a>
+                            </div>
                         </div>
 
                         {/* Background Map Placeholder */}
-                        <div className="absolute inset-0 bg-white/5 opacity-50 mix-blend-overlay"></div>
+                        <div className="absolute inset-0 z-0">
+                            <iframe
+                                width="100%"
+                                height="100%"
+                                frameBorder="0"
+                                scrolling="no"
+                                marginHeight={0}
+                                marginWidth={0}
+                                src="https://maps.google.com/maps?q=경상남도%20김해시%20김해대로%202301번길%2011&t=&z=15&ie=UTF8&iwloc=&output=embed"
+                                className="w-full h-full opacity-30 grayscale hover:grayscale-0 transition-all duration-500"
+                                aria-label="Google Map"
+                            ></iframe>
+                        </div>
                     </div>
                 </section>
 
