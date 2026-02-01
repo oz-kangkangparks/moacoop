@@ -59,8 +59,8 @@ export default function HomePage() {
               className="absolute inset-0"
             >
               <Image
-                src={`/images/homeslide/slide_${currentSlide}.jpg`}
-                alt={`MoaCoop Hero Slide ${currentSlide}`}
+                src={`/images/homeslide/slide_${currentSlide}.webp`}
+                alt="Main Slide"
                 fill
                 className="object-cover brightness-[0.6]"
                 priority

@@ -41,7 +41,7 @@ export default function AboutPage() {
                         <div className="absolute inset-0 p-12 md:p-16 flex items-center justify-center">
                             <div className="relative w-full h-full">
                                 <Image
-                                    src="/images/logo.png"
+                                    src="/images/logo.webp"
                                     alt="MoaCoop Symbol"
                                     fill
                                     className="object-contain"

@@ -65,10 +65,11 @@ export default function Navbar() {
         <Link href="/" className="relative z-50 flex items-center gap-4">
           <div className="relative w-12 h-12 md:w-16 md:h-16 rounded-full overflow-hidden bg-white border border-white/20 shadow-md flex items-center justify-center">
             <Image
-              src="/images/logo.png"
-              alt="MoaCoop Logo"
+              src="/images/logo.webp"
+              alt="Moa Coopt"
               fill
-              className="object-contain scale-[1.7]"
+              className="object-contain"
+              priority
             />
           </div>
           <span className={cn(

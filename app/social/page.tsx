@@ -1,3 +1,5 @@
+'use client';
+
 import Link from 'next/link';
 import Image from 'next/image';
 import { activities } from './data';
@@ -61,4 +63,3 @@ export default function SocialPage() {
     </div>
   );
 }
-

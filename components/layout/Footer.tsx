@@ -9,12 +9,12 @@ export default function Footer() {
 
                     <div className="col-span-1 md:col-span-2">
                         <Link href="/" className="flex items-center gap-3 mb-6">
-                            <div className="relative w-16 h-16 md:w-24 md:h-24 rounded-full overflow-hidden bg-white flex items-center justify-center shadow-lg border border-white/10 ring-1 ring-white/20">
+                            <div className="relative w-32 h-12 mb-6">
                                 <Image
-                                    src="/images/logo.png"
-                                    alt="MoaCoop Logo"
+                                    src="/images/logo.webp"
+                                    alt="Moa Coop"
                                     fill
-                                    className="object-contain scale-[1.6]"
+                                    className="object-contain object-left filter brightness-0 invert"
                                 />
                             </div>
                             <h2 className="text-2xl font-bold tracking-tight text-white">모아 청년 협동조합</h2>

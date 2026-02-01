@@ -89,7 +89,7 @@ export default function BusinessPage() {
                                     {service.id === 'it' ? (
                                         <div className="relative w-full h-full">
                                             <Image
-                                                src="/images/business/kangkangparks_logo.png"
+                                                src="/images/business/kangkangparks_logo.webp"
                                                 fill
                                                 className="object-contain"
                                                 alt="강강박스 로고"
@@ -98,7 +98,7 @@ export default function BusinessPage() {
                                     ) : service.id === 'moareum' ? (
                                         <div className="relative w-full h-full">
                                             <Image
-                                                src="/images/business/moareum_symbol.png"
+                                                src="/images/business/moareum_symbol.webp"
                                                 fill
                                                 className="object-contain"
                                                 alt="모아름 로고"
