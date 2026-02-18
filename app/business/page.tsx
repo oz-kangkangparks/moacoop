@@ -3,7 +3,7 @@
 import Link from 'next/link';
 import Image from 'next/image';
 import { motion } from 'framer-motion';
-import { Hammer, Sparkles, PaintBucket, ArrowRight, CheckCircle2 } from 'lucide-react';
+import { Sparkles, PaintBucket, ArrowRight, CheckCircle2 } from 'lucide-react';
 
 export default function BusinessPage() {
     const services = [
@@ -33,22 +33,7 @@ export default function BusinessPage() {
                 "Opal 등 최신 자동화 툴 통합 구축"
             ]
         },
-        {
-            title: "시설 유지보수",
-            id: "maintenance",
-            description: "전문가의 진단으로 건물의 안전과 수명을 책임집니다.",
-            icon: <Hammer className="w-8 h-8" />,
-            color: "bg-blue-600",
-            details: ["전기/조명 설비 정밀 진단", "배관 교체 및 누수 탐지", "방수 및 단열 시공", "긴급 복구 서비스"]
-        },
-        {
-            title: "공간 케어 서비스",
-            id: "cleaning",
-            description: "보이지 않는 곳까지 케어하는 프리미엄 위생 관리.",
-            icon: <CheckCircle2 className="w-8 h-8" />,
-            color: "bg-teal-500",
-            details: ["특수 청소 및 바닥 코팅", "준공 및 입주 청소", "정기 위생 관리", "방역 및 소독"]
-        }
+
     ];
 
     return (

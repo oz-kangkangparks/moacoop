@@ -85,57 +85,90 @@ export default function AboutPage() {
                     </motion.div>
                 </div>
 
-                {/* Organization Chart */}
+                {/* Core Values Section (Proposed) */}
                 <section className="mb-32">
                     <div className="text-center mb-16">
-                        <h2 className="text-3xl font-bold text-gray-900">조직도</h2>
+                        <motion.span
+                            initial={{ opacity: 0, y: 10 }}
+                            whileInView={{ opacity: 1, y: 0 }}
+                            viewport={{ once: true }}
+                            className="text-primary font-bold tracking-widest text-sm uppercase mb-3 block"
+                        >
+                            Our Philosophy
+                        </motion.span>
+                        <h2 className="text-3xl font-bold text-gray-900">핵심 가치</h2>
                         <div className="w-12 h-1 bg-primary mx-auto mt-6 rounded-full"></div>
                     </div>
 
-                    <div className="relative max-w-4xl mx-auto">
-                        {/* Tree Structure Visual */}
-                        <div className="flex flex-col items-center">
+                    <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+                        {[
+                            {
+                                icon: Award,
+                                title: "전문성 (Expertise)",
+                                desc: "각 분야 최고의 전문가들이 모여 최상의 결과물을 만듭니다."
+                            },
+                            {
+                                icon: Users,
+                                title: "협력 (Cooperation)",
+                                desc: "혼자가 아닌 함께의 가치를 믿으며, 시너지를 창출합니다."
+                            },
+                            {
+                                icon: MapPin,
+                                title: "지역사회 기여 (Contribution)",
+                                desc: "수익의 일부를 지역사회에 환원하여 따뜻한 변화를 만듭니다."
+                            }
+                        ].map((item, idx) => (
                             <motion.div
+                                key={idx}
                                 initial={{ opacity: 0, y: 20 }}
                                 whileInView={{ opacity: 1, y: 0 }}
                                 viewport={{ once: true }}
-                                className="bg-primary text-white px-10 py-4 rounded-full font-bold text-xl shadow-xl z-10 mb-8"
+                                transition={{ delay: idx * 0.1 }}
+                                className="bg-white p-8 rounded-3xl shadow-lg border border-gray-100 hover:shadow-xl transition-all text-center group"
                             >
-                                이사장
+                                <div className="w-16 h-16 bg-blue-50 rounded-2xl flex items-center justify-center mx-auto mb-6 group-hover:bg-primary group-hover:text-white transition-colors">
+                                    <item.icon className="w-8 h-8 text-primary group-hover:text-white transition-colors" />
+                                </div>
+                                <h3 className="text-xl font-bold text-gray-900 mb-3">{item.title}</h3>
+                                <p className="text-gray-600 leading-relaxed break-keep">
+                                    {item.desc}
+                                </p>
                             </motion.div>
+                        ))}
+                    </div>
+                </section>
 
-                            <div className="w-px h-12 bg-gray-200 mb-8"></div>
+                {/* Expertise Fields (Proposed for 'Diverse Experts') */}
+                <section className="mb-32">
+                    <div className="bg-gray-50 rounded-[2.5rem] p-12 md:p-20">
+                        <div className="text-center mb-16">
+                            <h2 className="text-3xl font-bold text-gray-900 mb-4">함께하는 전문가들</h2>
+                            <p className="text-gray-600">다양한 분야의 전문가들이 모아 청년 협동조합과 함께합니다.</p>
+                        </div>
 
-                            {/* Horizontal Connector for Desktop */}
-                            <div className="hidden md:block w-3/4 h-px bg-gray-200 mb-8 relative">
-                                <div className="absolute left-0 top-0 w-px h-8 bg-gray-200 transform translate-y-0"></div>
-                                <div className="absolute right-0 top-0 w-px h-8 bg-gray-200 transform translate-y-0"></div>
-                                <div className="absolute left-1/2 top-0 w-px h-8 bg-gray-200 transform -translate-x-1/2 translate-y-0"></div>
-                            </div>
-
-                            <div className="grid grid-cols-1 md:grid-cols-3 gap-8 w-full">
-                                {[
-                                    { title: "경영지원팀", color: "border-blue-200", text: "text-blue-900" },
-                                    { title: "사업본부", color: "border-gray-200", text: "text-gray-900" },
-                                    { title: "사회공헌팀", color: "border-orange-200", text: "text-orange-600" }
-                                ].map((team, idx) => (
-                                    <motion.div
-                                        key={idx}
-                                        initial={{ opacity: 0, y: 20 }}
-                                        whileInView={{ opacity: 1, y: 0 }}
-                                        viewport={{ once: true }}
-                                        transition={{ delay: idx * 0.1 }}
-                                        className={`bg-white border-2 ${team.color} p-8 rounded-3xl text-center shadow-lg hover:shadow-xl transition-all`}
-                                    >
-                                        <h3 className={`text-xl font-bold ${team.text} mb-4`}>{team.title}</h3>
-                                        <ul className="space-y-2 text-sm text-gray-500">
-                                            {idx === 0 && ["총무 / 회계", "홍보 / 마케팅"].map(i => <li key={i}>{i}</li>)}
-                                            {idx === 1 && ["시설 유지보수", "전문 청소", "인테리어"].map(i => <li key={i}>{i}</li>)}
-                                            {idx === 2 && ["봉사단 운영", "후원 관리", "지역 연계"].map(i => <li key={i}>{i}</li>)}
-                                        </ul>
-                                    </motion.div>
-                                ))}
-                            </div>
+                        <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
+                            {[
+                                { name: "IT 개발", icon: "💻" },
+                                { name: "건축/인테리어", icon: "🏗️" },
+                                { name: "디자인/예술", icon: "🎨" },
+                                { name: "의료/복지", icon: "🏥" },
+                                { name: "교육", icon: "📚" },
+                                { name: "경영/회계", icon: "📊" },
+                                { name: "마케팅", icon: "📢" },
+                                { name: "법률/노무", icon: "⚖️" },
+                            ].map((field, idx) => (
+                                <motion.div
+                                    key={idx}
+                                    initial={{ opacity: 0, scale: 0.9 }}
+                                    whileInView={{ opacity: 1, scale: 1 }}
+                                    viewport={{ once: true }}
+                                    transition={{ delay: idx * 0.05 }}
+                                    className="bg-white p-6 rounded-2xl text-center shadow-sm hover:shadow-md transition-shadow"
+                                >
+                                    <div className="text-4xl mb-3">{field.icon}</div>
+                                    <div className="font-bold text-gray-900">{field.name}</div>
+                                </motion.div>
+                            ))}
                         </div>
                     </div>
                 </section>

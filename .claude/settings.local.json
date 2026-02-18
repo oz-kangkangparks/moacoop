@@ -1,0 +1,15 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(nvm list:*)",
+      "Bash(where:*)",
+      "WebSearch",
+      "Bash(pnpm install:*)",
+      "Bash(pnpm view:*)",
+      "Bash(python3:*)",
+      "Bash(npm view:*)",
+      "Bash(taskkill:*)",
+      "Bash(netstat:*)"
+    ]
+  }
+}

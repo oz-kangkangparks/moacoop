@@ -258,7 +258,7 @@ export default function DonationPage() {
                                     '강*우', '김*민', '김*서', '김*현', '박*준', '박*호',
                                     '서*진', '신*아', '오*영', '윤*원', '이*규', '이*름',
                                     '이*재', '임*훈', '장*솔', '정*우', '조*현', '최*진',
-                                    '한*수', '황*영', '(주)모아름', '강강박스', '바른건축', '태양상사'
+                                    '한*수', '황*영', '(주)모아름', '강강박스'
                                 ].map((name, idx) => (
                                     <div key={idx} className="bg-white/10 backdrop-blur-sm border border-white/10 rounded-xl py-3 text-center text-white hover:bg-white/20 transition-colors">
                                         {name}

@@ -39,7 +39,6 @@ export default function Navbar() {
     { name: '사회 공헌', href: '/social' },
     { name: '사업', href: '/business' },
     { name: '후원 내역', href: '/donation' },
-    { name: '소식/문의', href: '/contact' },
   ];
 
   // Always use solid/glass style for visibility
@@ -63,12 +62,12 @@ export default function Navbar() {
       )}>
         {/* Logo */}
         <Link href="/" className="relative z-50 flex items-center gap-4">
-          <div className="relative w-12 h-12 md:w-16 md:h-16 rounded-full overflow-hidden bg-white border border-white/20 shadow-md flex items-center justify-center">
+          <div className="relative w-10 h-10 md:w-14 md:h-14 rounded-full overflow-hidden bg-white border border-white/20 shadow-md flex items-center justify-center">
             <Image
               src="/images/logo.webp"
               alt="Moa Coopt"
               fill
-              className="object-contain"
+              className="object-contain scale-[1.9]"
               priority
             />
           </div>
@@ -150,6 +149,13 @@ export default function Navbar() {
               {link.name}
             </Link>
           ))}
+          <Link
+            href="/contact"
+            onClick={() => setIsOpen(false)}
+            className="mt-4 px-8 py-3 rounded-full text-xl font-bold bg-primary text-white hover:bg-white hover:text-primary transition-all shadow-lg"
+          >
+            문의하기
+          </Link>
         </div>
       </div>
     </motion.header>
