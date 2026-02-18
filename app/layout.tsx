@@ -58,7 +58,7 @@ export const metadata: Metadata = {
   },
   verification: {
     other: {
-      'naver-site-verification': 'YOUR_NAVER_VERIFICATION_CODE', // TODO: 네이버 웹마스터 도구 소유권 확인 코드 입력 필요
+      'naver-site-verification': '15d93677b42864ebd75bc73f96f19a05be4dc720',
     },
     google: 'aMnVpmNCLTbg0_3c6MWXwJ02NpANbR6zKHQ0bF3EjEQ',
   },
