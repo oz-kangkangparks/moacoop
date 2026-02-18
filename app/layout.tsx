@@ -60,7 +60,7 @@ export const metadata: Metadata = {
     other: {
       'naver-site-verification': 'YOUR_NAVER_VERIFICATION_CODE', // TODO: 네이버 웹마스터 도구 소유권 확인 코드 입력 필요
     },
-    google: 'YOUR_GOOGLE_VERIFICATION_CODE', // TODO: 구글 서치 콘솔 소유권 확인 코드 입력 필요
+    google: 'aMnVpmNCLTbg0_3c6MWXwJ02NpANbR6zKHQ0bF3EjEQ',
   },
 };
 
